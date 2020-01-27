@@ -10,7 +10,8 @@ export function User({ id }) {
                     className="br-100 h4 w4 dib ba b--black-05 pa2"
                 />
                 <h1 className="f3 mb2">NAME</h1>
-                <h2 className="f5 fw4 gray mt0">TITLE</h2> </div>
+                <h2 className="f5 fw4 gray mt0">TITLE</h2>
+            </div>
         </article>
     );
 }
