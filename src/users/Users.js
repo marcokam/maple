@@ -37,15 +37,17 @@ export function Users() {
         const { id, avatar = "", first_name, last_name, email } = user;
 
         return (
-          <article key={id} className="dt w-100 bb b--black-05 pb2 mt2 pointer" href="#0">
-            <div className="dtc w2 w3-ns v-mid">
-              <img alt="avatar" src={avatar} className="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns" />
-            </div>
-            <div className="dtc v-mid pl3">
-              <h1 className="f6 f5-ns fw6 lh-title black mv0">{first_name} {last_name}</h1>
-              <h2 className="f6 fw4 mt0 mb0 black-60">{email}</h2>
-            </div>
-          </article>
+          <a key={id} href={`/users/${id}`} className="link">
+            <article className="dt w-100 bb b--black-05 pb2 mt2 pointer" href="#0">
+              <div className="dtc w2 w3-ns v-mid">
+                <img alt="avatar" src={avatar} className="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns" />
+              </div>
+              <div className="dtc v-mid pl3">
+                <h1 className="f6 f5-ns fw6 lh-title black mv0">{first_name} {last_name}</h1>
+                <h2 className="f6 fw4 mt0 mb0 black-60">{email}</h2>
+              </div>
+            </article>
+          </a>
         );
       })}
 
