@@ -11,10 +11,12 @@ const getJson = (...fetchArgs) => fetch(...fetchArgs)
 const getQueryParams = (params = {}) => Object.entries(params)
     .map(([key, val]) => `${key}=${val}`)
     .join("&");
-
+    
+const apiBase = "https://reqres.in/api";
 const generateUrl = (url, params = {}) => {
     const queryParams = getQueryParams(params);
-    return url + (queryParams ? `?${queryParams}` : "");
+    return `${apiBase}${url}${(queryParams ? `?${queryParams}` : "")}`;
 }
 
-export const getUsers = (params = {}) => getJson(generateUrl('https://reqres.in/api/users', params));
+export const getUsers = (params = {}) => getJson(generateUrl(`/users`, params));
+export const getUserById = (id, params = {}) => getJson(generateUrl(`/users/${id}`));

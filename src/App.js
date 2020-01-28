@@ -7,8 +7,8 @@ import {
     useParams
 } from "react-router-dom";
 
-import { ConnectedUser as Users } from "./Components/Users2";
-import { User } from "./Components/User";
+import { ConnectedUsers as Users } from "./Components/Users";
+import { ConnectedUser as User } from "./Components/User";
 
 import "./tachyons.min.css";
 
@@ -29,7 +29,7 @@ function App() {
 
 function UserRoute() {
     const { id } = useParams();
-    return id ? <User id={id} /> : <Users />;
+    return id ? <User id={parseInt(id, 10)} /> : <Users />;
 }
 
 export default App;
